@@ -75,7 +75,22 @@ def neutralize_v4(mol):
             atom.SetFormalCharge(0)
             atom.SetImplicitHCount(hcount - chg)
 
-neutralize = neutralize_v4
+# The following is the same as v4 but I've added a boolean
+# return value to indicate whether the molecule was altered.
+# This is useful to avoid regenerating a SMILES string for
+# those cases.
+def neutralize(mol):
+    """Neutralize charges of +1 or -1"""
+    match_found = pat_v3.Match(mol, matchvector_v4)
+    if not match_found:
+        return False
+    for match in matchvector_v4:
+        atom = mol.GetAtom(match[0])
+        chg = atom.GetFormalCharge()
+        hcount = atom.GetImplicitHCount()
+        atom.SetFormalCharge(0)
+        atom.SetImplicitHCount(hcount - chg)
+    return True
 
 if __name__ == "__main__":
     smi = "C(=O)[O-]"
