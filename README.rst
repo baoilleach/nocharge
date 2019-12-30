@@ -3,7 +3,7 @@ nocharge
 
 A simple Python module that attempts to neutralize all atoms with +1 or -1 charge in a molecule.
 
-For more information, see ...
+For more information, see https://baoilleach.blogspot.com/2019/12/no-charge-simple-approach-to.html.
 
 Usage:
 
