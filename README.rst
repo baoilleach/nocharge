@@ -5,7 +5,9 @@ A simple Python module that attempts to neutralize all atoms with +1 or -1 charg
 
 For more information, see ...
 
-Usage::
+Usage:
+
+.. code-block:: python
 
 	from openbabel import pybel
 	from nocharge import neutralize
@@ -18,3 +20,9 @@ Usage::
 		print("{} changed to {}".format(smi, outsmi))
 	    else:
 		print("{} was unaltered by neutralize".format(smi))
+
+which gives::
+
+        CC(=O)[O-] changed to CC(=O)O
+        C[N+](C)(C)C was unaltered by neutralize
+
