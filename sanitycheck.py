@@ -6,8 +6,8 @@ import gzip
 from openbabel import pybel
 import nocharge
 
-fns = [nocharge.neutralize_v1, nocharge.neutralize_v2, nocharge.neutralize_v3, nocharge.neutralize_v4]
-times = [0] * 4
+fns = [nocharge.neutralize_v1, nocharge.neutralize_v2, nocharge.neutralize_v3, nocharge.neutralize_v4, nocharge.neutralize_v5]
+times = [0] * 5
 
 testfile = os.path.join("data", "charged.sorted.smi.gz")
 with gzip.open(testfile, "rt") as inp:

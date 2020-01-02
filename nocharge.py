@@ -75,6 +75,12 @@ def neutralize_v4(mol):
             atom.SetFormalCharge(0)
             atom.SetImplicitHCount(hcount - chg)
 
+
+neutralize_op = ob.OBOp.FindType("neutralize")
+def neutralize_v5(mol):
+    """Neutralize charges of +1 or -1"""
+    neutralize_op.Do(mol)
+
 # The following is the same as v4 but I've added a boolean
 # return value to indicate whether the molecule was altered.
 # This is useful to avoid regenerating a SMILES string for
