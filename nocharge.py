@@ -50,7 +50,7 @@ def neutralize_v2(mol):
                 atom.SetImplicitHCount(hcount + 1)
 
 pat_v3 = ob.OBSmartsPattern()
-pat_v3.Init("[+1!H0!$([*]~[-1,-2,-3,-4]),-1!$([*]~[+1,+2,+3,+4])]")
+pat_v3.Init("[+1!h0!$([*]~[-1,-2,-3,-4]),-1!$([*]~[+1,+2,+3,+4])]")
 
 def neutralize_v3(mol):
     """Neutralize charges of +1 or -1"""
